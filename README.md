@@ -1,8 +1,8 @@
 # BluetoothSDK
 Android蓝牙SDK | 蓝牙广播 | BLE蓝牙 | SPP 蓝牙
 
-# 方法一 ARR依赖
-[AndroidKit.arr](https://github.com/RelinRan/BluetoothSDK/blob/master/BluetoothSDK.aar)
+## 方法一 ARR依赖
+[BluetoothSDK.arr](https://github.com/RelinRan/BluetoothSDK/blob/master/BluetoothSDK.aar)
 ```
 android {
     ....
@@ -19,8 +19,8 @@ dependencies {
 
 ```
 
-# 方法二   JitPack依赖
-## A.项目/build.grade
+## 方法二   JitPack依赖
+### A.项目/build.grade
 ```
 	allprojects {
 		repositories {
@@ -29,14 +29,14 @@ dependencies {
 		}
 	}
 ```
-## B.项目/app/build.grade
+### B.项目/app/build.grade
 ```
 	dependencies {
 	        implementation 'com.github.RelinRan:BluetoothSDK:1.0.0'
 	}
 ```
 
-# 蓝牙搜索
+## 蓝牙搜索
 ```
 //权限申请
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -45,7 +45,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 //权限申请成功进行蓝牙搜索,Bluetooth.MODE_SPP为经典搜索方式；Bluetooth.MODE_BLE为广播搜索方式
 Bluetooth.with(this).enable(false).startScan(Bluetooth.MODE_SPP, onBluetoothScanListener);
 ```
-# 蓝牙搜索监听
+## 蓝牙搜索监听
 ```
 public interface OnBluetoothScanListener {
 
@@ -107,7 +107,7 @@ public interface OnBluetoothScanListener {
 }
 ```
 
-# 蓝牙客户端连接
+## 蓝牙客户端连接
 ```
 BUUID buuid = new BUUID();
 //以下UUID如果不设置会有默认UUID
@@ -120,7 +120,7 @@ client = new BluetoothClient(context, BluetoothClient.MODE_SPP, "扫描出的蓝
 client.setOnBluetoothClientListener(onBluetoothClientListener);
 client.connect();
 ```
-# 蓝牙客户端连接监听
+## 蓝牙客户端连接监听
 ```
 public interface OnBluetoothClientListener {
 
@@ -187,7 +187,7 @@ public interface OnBluetoothClientListener {
 
 }
 ```
-# 蓝牙服务端连接
+## 蓝牙服务端连接
 ```
 BUUID buuid = new BUUID();
 //以下UUID如果不设置会有默认UUID
@@ -205,7 +205,7 @@ server.setBleManufacturerData("11".getBytes());
 server.setOnBluetoothServerListener(this);
 server.start();
 ```
-# 蓝牙服务端连接监听
+## 蓝牙服务端连接监听
 ```
 public interface OnBluetoothServerListener {
 
