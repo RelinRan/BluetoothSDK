@@ -41,14 +41,14 @@ public interface OnBluetoothScanListener {
     void onBluetoothConnected(BluetoothDevice device);
 
     /**
-     * 设备断开连接
+     * 设备断开连接(SPP)
      *
      * @param device
      */
     void onBluetoothDisconnected(BluetoothDevice device);
 
     /**
-     * 低功耗设备扫描结果
+     * 低功耗设备扫描结果（BLE）
      *
      * @param callbackType {@link Bluetooth#CALLBACK_TYPE_ALL_MATCHES}
      * @param result
@@ -56,14 +56,14 @@ public interface OnBluetoothScanListener {
     void onBluetoothLeScanResult(int callbackType, ScanResult result);
 
     /**
-     * 低功耗批量处理扫描结果
+     * 低功耗批量处理扫描结果（BLE）
      *
      * @param results
      */
     void onBluetoothLeBatchScanResults(List<ScanResult> results);
 
     /**
-     * 低功耗扫描失败
+     * 低功耗扫描失败（BLE）
      *
      * @param error
      */
