@@ -229,6 +229,32 @@ public class Bluetooth {
     }
 
     /**
+     * 配对
+     *
+     * @param device 配对设备
+     * @return
+     * @throws Exception
+     */
+    public boolean createBond(BluetoothDevice device) throws Exception {
+        Method createBondMethod = device.getClass().getMethod("createBond");
+        Boolean returnValue = (Boolean) createBondMethod.invoke(device);
+        return returnValue.booleanValue();
+    }
+
+    /**
+     * 移除配对
+     *
+     * @param device 配对设备
+     * @return
+     * @throws Exception
+     */
+    public boolean removeBond(BluetoothDevice device) throws Exception {
+        Method removeBondMethod = device.getClass().getMethod("removeBond");
+        Boolean returnValue = (Boolean) removeBondMethod.invoke(device);
+        return returnValue.booleanValue();
+    }
+
+    /**
      * 让蓝牙可以被找到
      */
     public Bluetooth discoverable() {
