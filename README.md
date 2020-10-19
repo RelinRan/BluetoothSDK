@@ -32,7 +32,7 @@ dependencies {
 ### B.项目/app/build.grade
 ```
 	dependencies {
-	        implementation 'com.github.RelinRan:BluetoothSDK:1.0.0'
+	        implementation 'com.github.RelinRan:BluetoothSDK:1.0.1'
 	}
 ```
 
